@@ -51,7 +51,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="mt-3 inline-block text-lg font-bold text-blue-900 hover:text-blue-700 underline"
           >
-            IEEE Xplore: Siamese Capsule Networks for Alzheimer&apos;s Classification
+            IEEE Transactions on Image Processing: Siamese Capsule Networks for Alzheimer&apos;s Classification
           </a>
           <p className="mt-2 text-sm text-blue-700">
             Click to read the foundational research behind the model.
