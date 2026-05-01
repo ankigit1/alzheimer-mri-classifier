@@ -6,7 +6,7 @@ An advanced **AI-powered medical diagnosis system** for detecting and classifyin
 
 **Status**: ✅ Production Ready | 🔧 Fully Tested | 📊 SNNCap V2.0 Support
 
-**Research Paper**: [IEEE Xplore - Siamese Capsule Networks for Alzheimer's Classification](https://ieeexplore.ieee.org/abstract/document/11488457)
+**Research Paper**: [IEEE Transactions on Image Processing - Siamese Capsule Networks for Alzheimer's Classification](https://ieeexplore.ieee.org/abstract/document/11488457)
 
 **Built and Deployed by**: [Ankit Garg](https://sites.google.com/view/ankitgarg/)
 
@@ -305,7 +305,7 @@ To modify or extend the project:
 
 ## 📚 Research & Credits
 
-**Research Paper**: [IEEE Xplore - Siamese Capsule Networks for Alzheimer's Classification](https://ieeexplore.ieee.org/abstract/document/11488457)
+**Research Paper**: [IEEE Transactions on Image Processing - Siamese Capsule Networks for Alzheimer's Classification](https://ieeexplore.ieee.org/abstract/document/11488457)
 
 **Built and Deployed by**: [Ankit Garg](https://sites.google.com/view/ankitgarg/)
 ### Hot Reload During Development
