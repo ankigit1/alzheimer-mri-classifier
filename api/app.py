@@ -1,7 +1,9 @@
 import io
+import os
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from PIL import Image
 
 from api.inference import MODEL_KEYS, MODEL_LABELS, get_registry
@@ -12,6 +14,19 @@ app = FastAPI(title="Alzheimer MRI API", version="1.0.0")
 logger = get_logger("api", "inference.log")
 
 app.add_middleware(RequestLoggingMiddleware)
+
+# Serve static files from frontend build
+app.mount("/static", StaticFiles(directory="../alz-frontend-main/dist", html=True), name="static")
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to Alzheimer MRI API"}
+
+@app.get("/app")
+def serve_frontend():
+    # Redirect or serve index.html
+    from fastapi.responses import FileResponse
+    return FileResponse("../alz-frontend-main/dist/index.html")
 
 
 @app.on_event("startup")
@@ -32,7 +47,7 @@ def list_models():
 @app.post("/analyse_mri")
 async def analyse_mri(
     file: UploadFile = File(...),
-    model_version: str = Form("SNNCap V2"),
+    model_version: str = Form("SNNCap V2.0"),
 ):
     if model_version not in MODEL_KEYS:
         logger.warning("Unknown model version requested: %s", model_version)
@@ -60,4 +75,4 @@ async def analyse_mri(
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("api.app:app", host="0.0.0.0", port=5000, reload=False)
+    uvicorn.run("api.app:app", host="0.0.0.0", port=int(os.getenv("PORT", 5000)), reload=False)

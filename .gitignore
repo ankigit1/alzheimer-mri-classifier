@@ -48,6 +48,7 @@ package-lock.json
 .npm
 
 # Build outputs
+SNNCap_v1.0/
 dist/
 build/
 .next/

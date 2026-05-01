@@ -18,11 +18,7 @@ CLASS_NAMES = [
 ROOT_DIR = Path(__file__).resolve().parents[1]
 
 MODEL_CONFIGS = {
-    "SNNCap V1": {
-        "model_path": ROOT_DIR / "SNNCap_v1.0" / "siamese_capsule_alzheimer_4class.pth",
-        "ref_path": ROOT_DIR / "SNNCap_v1.0" / "reference_embeddings_means.pt",
-    },
-    "SNNCap V2": {
+    "SNNCap V2.0": {
         "model_path": ROOT_DIR / "SNNCap_v2.0" / "siamese_capsule_finetuned.pth",
         "ref_path": ROOT_DIR / "SNNCap_v2.0" / "reference_embeddings_means_finetuned.pt",
     },

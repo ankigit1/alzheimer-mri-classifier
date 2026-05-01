@@ -2,15 +2,15 @@
 
 ## 🧠 Overview
 
-An advanced **AI-powered medical diagnosis system** for detecting and classifying Alzheimer's dementia stages from brain MRI scans. Features dual deep learning models with 97-99% accuracy using Siamese Capsule Networks with clinical-grade validation.
+An advanced **AI-powered medical diagnosis system** for detecting and classifying Alzheimer's dementia stages from brain MRI scans. Features Siamese Capsule Networks with 99% accuracy using clinical-grade validation.
 
-**Status**: ✅ Production Ready | 🔧 Fully Tested | 📊 Dual Model Support
+**Status**: ✅ Production Ready | 🔧 Fully Tested | 📊 SNNCap V2.0 Support
 
 ---
 
 ## ✨ Features
 
-- **🎯 Dual AI Models**: SNNCap V1 (97% acc, faster) and SNNCap V2 (99% acc, more accurate)
+- **🎯 AI Model**: SNNCap V2.0 (99% acc, upgraded version)
 - **💻 Modern Web UI**: React + Vite + Tailwind CSS with professional design
 - **⚡ FastAPI Backend**: High-performance async inference with Uvicorn
 - **📊 Real-time Analysis**: Process MRI scans in seconds
@@ -33,7 +33,7 @@ An advanced **AI-powered medical diagnosis system** for detecting and classifyin
 │                                                             │
 │  React + Vite (Port 3000)                                  │
 │  ├── File Upload (Drag & Drop)                            │
-│  ├── Model Selector (V1 vs V2)                            │
+│  ├── SNNCap V2.0 Model                                    │
 │  ├── Real-time Analysis Results                           │
 │  └── Confidence Visualization (Bar Charts)                │
 └──────────────────────────┬──────────────────────────────────┘
@@ -55,10 +55,6 @@ An advanced **AI-powered medical diagnosis system** for detecting and classifyin
 │              Inference & Model Layer                       │
 │                                                            │
 │  ModelRegistry (Lazy Loading)                            │
-│  ├── SNNCap_v1.0/                                        │
-│  │   ├── siamese_capsule_alzheimer_4class.pth           │
-│  │   └── reference_embeddings_means.pt                  │
-│  │                                                       │
 │  └── SNNCap_v2.0/                                        │
 │      ├── siamese_capsule_finetuned.pth                  │
 │      └── reference_embeddings_means_finetuned.pt        │
@@ -120,8 +116,7 @@ GET /models
 Response:
 {
   "models": [
-    "SNNCap V1",
-    "SNNCap V2"
+    "SNNCap V2.0"
   ]
 }
 ```
@@ -133,11 +128,11 @@ POST /analyse_mri
 Content-Type: multipart/form-data
 Body:
   - file: <MRI image file (PNG/JPG)>
-  - model_version: "SNNCap V1" or "SNNCap V2" (default: V2)
+  - model_version: "SNNCap V2.0" (default: V2.0)
 
 Response:
 {
-  "model_version": "SNNCap V2",
+  "model_version": "SNNCap V2.0",
   "predicted_class": "Mild Dementia",
   "closeness": {
     "No Dementia": 15.23,
@@ -188,11 +183,7 @@ E:\projectWork\API/
 │   ├── start.log                   ← Startup logs
 │   └── inference.log               ← API & inference logs
 │
-├── 📁 SNNCap_v1.0/                 ← Model V1 Artifacts
-│   ├── siamese_capsule_alzheimer_4class.pth
-│   └── reference_embeddings_means.pt
-│
-├── 📁 SNNCap_v2.0/                 ← Model V2 Artifacts
+├── 📁 SNNCap_v2.0/                 ← Model V2.0 Artifacts
 │   ├── siamese_capsule_finetuned.pth
 │   └── reference_embeddings_means_finetuned.pt
 │
@@ -227,21 +218,6 @@ E:\projectWork\API/
 - **Package Manager**: npm (dependencies)
 
 ---
-
-## 🔄 Model Comparison
-
-| Feature | SNNCap V1 | SNNCap V2 |
-|---------|-----------|-----------|
-| **Accuracy** | 97% | 99% ⭐ |
-| **Speed** | Faster | Slightly slower |
-| **Best For** | Real-time screening | Clinical diagnosis |
-| **Recommended** | Quick checks | Primary analysis |
-
-**How to Switch Models:**
-1. Open UI at http://localhost:3000/
-2. Click **"SNNCap V1"** or **"SNNCap V2"** button
-3. Upload MRI scan
-4. Click **Analyze**
 
 ---
 
@@ -287,7 +263,7 @@ Stop-Process -Id <PID> -Force
 3. Review logs: `logs/inference.log`
 
 ### Model Loading Error
-1. Verify model files exist in `SNNCap_v1.0/` and `SNNCap_v2.0/`
+1. Verify model files exist in `SNNCap_v2.0/`
 2. Check `logs/inference.log` for details
 3. Restart with: `.\start.ps1`
 
@@ -306,7 +282,7 @@ Stop-Process -Id <PID> -Force
 
 ## 📈 Performance
 
-- **Inference Time**: ~500-600ms (V2), ~300-400ms (V1)
+- **Inference Time**: ~500-600ms (V2.0)
 - **Memory Usage**: ~2-3GB with models loaded
 - **Concurrent Requests**: Handle multiple simultaneous uploads
 - **Startup Time**: ~30 seconds (includes model loading)
@@ -319,9 +295,15 @@ To modify or extend the project:
 
 1. **Backend Changes**: Edit `api/app.py` or `api/inference.py`
 2. **Frontend Changes**: Edit `alz-frontend-main/src/`
-3. **Models**: Replace `.pth` files in `SNNCap_v1.0/` or `SNNCap_v2.0/`
+2. **Models**: Replace `.pth` files in `SNNCap_v2.0/`
 4. **Logging**: Modify `logger/logger.py`
+---
 
+## 📚 Research & Credits
+
+**Research Paper**: [IEEE Xplore - Siamese Capsule Networks for Alzheimer's Classification](https://ieeexplore.ieee.org/abstract/document/11488457)
+
+**Built and Deployed by**: Ankit Garg
 ### Hot Reload During Development
 - **Frontend**: Changes auto-reload in browser (Vite HMR)
 - **Backend**: Manual restart of `start.ps1` required
