@@ -12,7 +12,7 @@ const Index = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [prediction, setPrediction] = useState(null);
-  const [modelVersion, setModelVersion] = useState("SNNCap V2");
+  const [modelVersion, setModelVersion] = useState("SNNCap V2.0");
 
   const handleImageSelect = (file) => {
     setSelectedImage(file);

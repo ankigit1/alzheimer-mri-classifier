@@ -24,7 +24,7 @@ const Footer = () => {
             </div>
             <div>
               <h3 className="font-semibold text-gray-700">Privacy Secure</h3>
-              <p className="text-sm text-gray-500">HIPAA compliant platform</p>
+              <p className="text-sm text-gray-500">Secure AI platform</p>
             </div>
           </div>
 
@@ -56,10 +56,21 @@ const Footer = () => {
         </div>
 
         {/* Bottom Note */}
-        <div className="pt-6 border-t border-gray-300 text-center">
+        <div className="pt-6 border-t border-gray-300 text-center space-y-2">
           <p className="text-xs text-gray-500">
             © 2025 MediScan AI. For research purposes only. Always consult healthcare professionals.
           </p>
+          <p className="text-xs text-gray-500">
+            Built and deployed by Ankit Garg
+          </p>
+          <a
+            href="https://ieeexplore.ieee.org/abstract/document/11488457"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-blue-600 hover:text-blue-800 underline font-medium"
+          >
+            Research Paper: IEEE Xplore
+          </a>
         </div>
       </div>
     </footer>

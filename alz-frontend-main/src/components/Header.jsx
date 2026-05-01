@@ -13,7 +13,7 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-black">MediScan AI</h1>
-              <p className="text-sm text-gray-500">Dementia Diagnosis Assistant</p>
+              <p className="text-sm text-gray-500">Powered by SNNCap V2.0 - Upgraded Version</p>
             </div>
           </div>
 
