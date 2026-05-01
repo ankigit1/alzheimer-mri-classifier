@@ -40,6 +40,24 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Prominent Research Banner */}
+        <div className="mb-6 rounded-3xl border border-blue-200 bg-blue-50 p-6 text-center shadow-sm">
+          <p className="text-xs font-semibold tracking-widest text-blue-700 uppercase">
+            Research Paper
+          </p>
+          <a
+            href="https://ieeexplore.ieee.org/abstract/document/11488457"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-block text-lg font-bold text-blue-900 hover:text-blue-700 underline"
+          >
+            IEEE Xplore: Siamese Capsule Networks for Alzheimer&apos;s Classification
+          </a>
+          <p className="mt-2 text-sm text-blue-700">
+            Click to read the foundational research behind the model.
+          </p>
+        </div>
+
         {/* Social Icons Section */}
         <div className="mt-10 mb-6 text-center">
           <p className="text-sm font-medium text-gray-600 mb-3">Let’s Connect</p>
@@ -61,16 +79,16 @@ const Footer = () => {
             © 2025 MediScan AI. For research purposes only. Always consult healthcare professionals.
           </p>
           <p className="text-xs text-gray-500">
-            Built and deployed by Ankit Garg
+            Built and deployed by{' '}
+            <a
+              href="https://sites.google.com/view/ankitgarg/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              Ankit Garg
+            </a>
           </p>
-          <a
-            href="https://ieeexplore.ieee.org/abstract/document/11488457"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-blue-600 hover:text-blue-800 underline font-medium"
-          >
-            Research Paper: IEEE Xplore
-          </a>
         </div>
       </div>
     </footer>
